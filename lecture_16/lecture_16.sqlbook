@@ -99,8 +99,9 @@ Try it yourself!
 -- Select a new driver id (needs to be unique)
 -- Make sure to deparate arguments by a semicolon!
 
+INSERT INTO drivers VALUES(5,'Max Verstappen','Dutch',51);
 
-
+INSERT INTO drivers VALUES(6,'Juan Pablo Montoya','Colombian',6);
 -- SQLBook: Markup
 # <span style="color:darkblue"> II. Dataset Operations </span>
 
@@ -159,7 +160,7 @@ Sort
 -- SQLBook: Code
 -- Order in ascending order of victories
 -- Remember that * means that all columns are selected
-SELECT * FROM drivers
+SELECT driver_name FROM drivers
 ORDER BY victories ASC;
 
 -- Order in descending order of victories
@@ -186,8 +187,8 @@ Try it yourself!
 with more than 60 victories
 -- SQLBook: Code
 -- Write your own code!
-
-
+select nationality, driver_id from drivers ADD
+WHERE victories > 60;
 
 -- SQLBook: Markup
 # <span style="color:darkblue"> III. Groupby + Chaining </span>
