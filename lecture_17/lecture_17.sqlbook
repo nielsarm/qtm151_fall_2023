@@ -58,6 +58,8 @@ DROP TABLE IF EXISTS members.us_congress_members;
 
 - See this link: https://hevodata.com/learn/postgresql-import-csv/
 
+- **Optional: we will not use it in this class**
+
 1. Using the ```COPY``` command
 
     For the instructor's computer this is:
@@ -71,6 +73,7 @@ DROP TABLE IF EXISTS members.us_congress_members;
     ```
 
     **Disadvantages:**
+    
     1.1 You have to create the tables, columns and their types manually (See Lecture 16)
 
     1.2 The column types in your CSV **must coincide precisely** with the types you define in SQL (this can be very tricky!)
