@@ -26,13 +26,14 @@ United States Congress dataset
 -- SQLBook: Markup
 # <span style="color:darkblue"> II. Create and Activate a New Database </span>
 -- SQLBook: Code
--- Active: 1698674191041@@127.0.0.1@5432@postgres
+-- Active: 1698680199377@@127.0.0.1@5432@us_congress
 
 DROP DATABASE IF EXISTS us_congress;
 -- SQLBook: Code
+-- Active: 1698680199377@@127.0.0.1@5432@us_congress
 CREATE DATABASE us_congress;
 -- SQLBook: Code
--- Active: 1698674191041@@127.0.0.1@5432@us_congress
+-- Active: 1698680199377@@127.0.0.1@5432@us_congress
 CREATE SCHEMA bills;
 
 CREATE SCHEMA members;
@@ -43,7 +44,7 @@ CREATE SCHEMA members;
 
 - Click on the ```Active Connection``` button and choose the correct database
 -- SQLBook: Code
--- Active: 1698674191041@@127.0.0.1@5432@us_congress
+-- Active: 1698680199377@@127.0.0.1@5432@us_congress
 DROP TABLE IF EXISTS bills.bills_actions;
 DROP TABLE IF EXISTS bills.bills_subjects;
 DROP TABLE IF EXISTS members.us_congress_members;
@@ -142,6 +143,9 @@ SELECT * FROM schemas_name.tables_name
 ```
 -- SQLBook: Code
 -- Write your own code
+bills_subjects = pd.read_csv("/Users/nielsarmbruster/Documents/GitHub/qtm151_fall_2023/lecture_17/data/bills_subjects.csv")
+bills_actions = pd.read_csv("/Users/nielsarmbruster/Documents/GitHub/qtm151_fall_2023/lecture_17/data/bills_actions.csv")
+
 
 -- SQLBook: Markup
 # <span style="color:darkblue"> III. Merge Data </span>
