@@ -222,6 +222,8 @@ AND schema1.table1.key1_3 = schema2.table2.key2_3;
 -- SQLBook: Code
 -- Write your own code
 
+-- SQLBook: Code
+CREATE DATABASE formula1;
 -- SQLBook: Markup
 # <span style="color:darkblue"> IV. (Optional) Additional Resources </span>
 

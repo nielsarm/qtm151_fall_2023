@@ -6,14 +6,18 @@
 <font size = "5">
 Add a comment with your Emory ID below
 -- SQLBook: Code
+-- Active: 1698680199377@@127.0.0.1@5432@formula1
 -- Write your own code
-
+-- 2510657
 -- SQLBook: Markup
 <font size = "5">
 
 (a) Create a new SQL database called formula1
 -- SQLBook: Code
 -- Write your own code
+
+DROP DATABASE IF EXISTS formula1;
+CREATE DATABASE formula1;
 
 -- SQLBook: Markup
 
@@ -69,7 +73,11 @@ Hints:
 - In SQL you only need a single equality "="
 - In SQL use single quotes for logical conditions with strings '...'
 -- SQLBook: Code
+-- Active: 1698680199377@@127.0.0.1@5432@formula1
 -- Write your own code
+SELECT * FROM drivers
+WHERE nationality = 'American'
+ORDER by surname ASC;
 
 -- SQLBook: Markup
 <font size = "5">
@@ -86,6 +94,9 @@ HINT: Include "driverId" in quotations since it has a mix of <br>
 upper case and lower case letters
 -- SQLBook: Code
 -- Write your own code
+SELECT COUNT(DISTINCT 'driverId') AS num_distinct_driverids,
+COUNT('driverId') AS num_driverids    
+FROM drivers;
 
 -- SQLBook: Markup
 <font size = "5">
@@ -101,8 +112,11 @@ HINT: See the end of lectures 17 and 18 for details <br>
 HINT: Include "driverId" in quotations since it has a mix of <br>
 upper case and lower case letters
 -- SQLBook: Code
--- Write your own code
-
+-- Active: 1698680199377@@127.0.0.1@5432@formula1
+SELECT "driverId", AVG(milliseconds) AS avg_milliseconds
+FROM lap_times
+GROUP BY "driverId"
+ORDER BY avg_milliseconds ASC;
 -- SQLBook: Markup
 <font size = "5">
 
@@ -119,3 +133,6 @@ HINT: Include "driverId" in quotations since it has a mix of <br>
 upper case and lower case letters
 -- SQLBook: Code
 -- Write your own code
+SELECT * FROM lap_times
+LEFT JOIN drivers
+ON lap_times."driverId" = drivers."driverId"
